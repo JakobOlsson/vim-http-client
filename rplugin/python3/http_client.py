@@ -150,7 +150,7 @@ class Main(object):
         existing_buffer_window_id = self.vim.eval(
             'bufwinnr("%s")' % self.BUFFER_NAME
         )
-        if existing_buffer_window_id == '-1':
+        if existing_buffer_window_id < 0:
             if self.vim.eval('g:http_client_result_vsplit') == '1':
                 split_cmd = 'vsplit'
             else:
