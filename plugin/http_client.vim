@@ -46,7 +46,7 @@ function! s:DoHTTPRequest()
     execute 'Pyfile ' . s:script_path . '/http_client.py'
   endif
 
-  Python do_request_from_buffer()
+  exec DoRequestFromBuffer()
 endfunction
 
 command! -nargs=0 HTTPClientDoRequest call <SID>DoHTTPRequest()
